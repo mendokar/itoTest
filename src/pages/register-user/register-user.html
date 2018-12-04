@@ -1,0 +1,57 @@
+<!--
+  Generated template for the RegisterUserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Registro de Usuario</ion-title>    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Registra tus datos</h2>
+  <ion-item>
+    <ion-label color="primary" floating>Nombre</ion-label>
+    <ion-input [(ngModel)]="_datosUser._nombre" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Apellido</ion-label>
+    <ion-input [(ngModel)]="_datosUser._apellido" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Profesión</ion-label>
+    <ion-select [(ngModel)]="_datosUser._profesion">
+      <ion-option value="Veterinario">Veterinario</ion-option>
+      <ion-option value="Especialista">Especialista</ion-option>
+      <ion-option value="Ayudante">Ayudante</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Edad</ion-label>
+    <ion-input [(ngModel)]="_datosUser._edad" type="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Genero</ion-label>
+    <ion-select [(ngModel)]="_datosUser._genero">
+      <ion-option value="Femenino">Femenino</ion-option>
+      <ion-option value="Masculino">Masculino</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" floating>Codigo Postal</ion-label>       
+    <ion-input [(ngModel)]="_datosUser._codigoPostal" (ionChange)="updateSearchResults()" ></ion-input> 
+  </ion-item>
+  <ion-item no-lines>
+    <ion-list [hidden]="autocompleteItems.length == 0">
+      <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
+  </ion-item>
+  <button *ngIf="ver" style="text-align:center" margin ion-button round outline (click)="registrarDatosUsuario()">Registrarme</button>
+</ion-content>

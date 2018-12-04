@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      ItoTest
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Menu ItoTest</h3>
+  <p>Selecciona una opción</p>
+  <ion-item no-lines>
+    <button ion-button round outline (click)="verPagina('RegisterUserPage','false')">Registro</button>
+  <button ion-button round outline (click)="verPagina('RegisterUserPage','true')">Detalles</button>
+  <button ion-button round outline (click)="verPagina('CoincidencesPage','false')">Coincidencias</button>
+  </ion-item>
+</ion-content>
